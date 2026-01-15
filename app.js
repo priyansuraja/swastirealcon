@@ -36,3 +36,25 @@ function closeChatbot() {
 	// Later you can connect WhatsApp, Tawk.to, Botpress, etc.
   }
   
+
+function filterCity(city) {
+  const cards = document.querySelectorAll('.property-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+
+  cards.forEach(card => {
+    if (city === 'all' || card.dataset.city === city) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+
+
+  
+
+

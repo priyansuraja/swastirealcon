@@ -31,7 +31,7 @@
               </li>
               
             <li><a href="#services" data-after="Service">RENT</a></li>
-             <li><a href="#services" data-after="Service">SERVICE</a></li>
+            <li><a href="#services" data-after="Service">SERVICE</a></li>
 
              <li><a href="#management" data-after="Management">MANAGEMENT</a></li>
 
@@ -61,13 +61,64 @@
 
 
 
-<!-- Service Section -->
+
+  <!-- Service Section -->
   <section id="services">
     <div class="services container">
       <div class="service-top">
         <h1 class="section-title">We Will Help You</h1>
         <p>Swasti Realcon is a reliable real estate company focused on helping middle-class families buy and sell residential plots safely and affordably. We offer verified properties, transparent pricing, and expert assistance to ensure a smooth and stress-free real estate experience. Our mission is to make land ownership accessible, secure, and trustworthy for everyone.</p>
       </div>
+
+      <section id="properties">
+        <div class="properties container">
+          <h1 class="section-title">Featured <span>Plots</span></h1>
+      
+          <!-- FILTER BUTTONS -->
+          <div class="city-filters">
+            <button class="filter-btn active" onclick="filterCity('all')">All</button>
+            <button class="filter-btn" onclick="filterCity('berhampur')">Berhampur</button>
+            <button class="filter-btn" onclick="filterCity('bhubaneswar')">Bhubaneswar</button>
+            <button class="filter-btn" onclick="filterCity('puri')">Puri</button>
+            <button class="filter-btn" onclick="filterCity('balugaon')">Balugaon</button>
+          </div>
+          
+      
+          <div class="property-grid">
+      
+            <div class="property-card" data-city="berhampur">
+              <img src="images/plot1.jpg" alt="Berhampur Plot">
+              <h3>Berhampur</h3>
+              <p>1200 sq.ft Residential Plot</p>
+              <p class="price">₹ 8.5 Lakhs</p>
+              <button>View Details</button>
+            </div>
+            
+      
+            <div class="property-card" data-city="bhubaneswar">
+              <img src="images/plot2.jpg" alt="Bhubaneswar Plot">
+              <h3>Bhubaneswar</h3>
+              <p>1500 sq.ft Residential Plot</p>
+              <p class="price">₹ 15 Lakhs</p>
+              <button>View Details</button>
+            </div>
+            
+      
+            <div class="property-card" data-city="puri">
+              <img src="images/plot3.jpg" alt="Puri Plot">
+              <h3>Puri</h3>
+              <p>1000 sq.ft Plot Near Highway</p>
+              <p class="price">₹ 10 Lakhs</p>
+              <button>View Details</button>
+            </div>
+            
+      
+          </div>
+        </div>
+      </section>
+      
+
+
 
       <!-- Management Section -->
 <section id="management">
@@ -119,6 +170,5 @@
 
 
 </body>
-
 
 </html>

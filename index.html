@@ -1,174 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>My Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Swasti Realcon</title>
 </head>
 
 <body>
-  <!-- Header -->
-  <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
-            <h1><span>SWASTI REALCON</span> </h1>
-          </a>
-        </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#hero" data-after="Home">BUY</a></li>
-            <li class="city-menu">
-                <a href="javascript:void(0)" onclick="toggleCityMenu()">CITY ▾</a>
-              
-             
-              </li>
-              
-            <li><a href="#services" data-after="Service">RENT</a></li>
-            <li><a href="#services" data-after="Service">SERVICE</a></li>
 
-             <li><a href="#management" data-after="Management">MANAGEMENT</a></li>
-
-             
-            <li><a href="https://priyansuraja.github.io/contact-form/" data-after="Contact"><span>contact us</span></a></li>
-          </ul>
-        </div>
+<!-- ================= HEADER ================= -->
+<section id="header">
+  <div class="header container">
+    <div class="nav-bar">
+      <div class="brand">
+        <a href="#hero"><h1>SWASTI REALCON</h1></a>
+      </div>
+      <div class="nav-list">
+        <div class="hamburger"><div class="bar"></div></div>
+        <ul>
+          <li><a href="#properties">BUY</a></li>
+          <li><a href="javascript:void(0)">CITY ▾</a></li>
+          <li><a href="#services">RENT</a></li>
+          <li><a href="#services">SERVICE</a></li>
+          <li><a href="#management">MANAGEMENT</a></li>
+          <li>
+            <a href="https://priyansuraja.github.io/contact-form/">
+              <span>CONTACT US</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-  </section>
-  <!-- End Header -->
+  </div>
+</section>
+
+<!-- ================= HERO ================= -->
+<section id="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Find Your Perfect Plot in Odisha</h1>
+    <p>Verified residential plots with transparent pricing & legal clarity</p>
+    <a href="#properties" class="hero-btn">Explore Plots</a>
+  </div>
+
+  <!-- Smooth transition -->
+  <div class="hero-transition"></div>
+</section>
+
+<!-- ================= HELP / ABOUT ================= -->
+<section id="services">
+  <div class="services-card">
+    <h1>Your Trusted Real Estate Partner</h1>
+<p>
+We specialize in verified residential plots across Odisha, offering
+transparent pricing, legal due diligence, and personalized site visits
+to help families invest with confidence.
+</p>
+
+  </div>
+</section>
+
+<!-- ================= PROPERTIES ================= -->
+<section id="properties">
+  <div class="properties container">
+
+    <h1 class="section-title">
+      Featured <span>Plots</span>
+    </h1>
+
+    <div class="city-filters">
+      <button class="filter-btn active" onclick="filterCity('all')">All</button>
+      <button class="filter-btn" onclick="filterCity('berhampur')">Berhampur</button>
+      <button class="filter-btn" onclick="filterCity('bhubaneswar')">Bhubaneswar</button>
+      <button class="filter-btn" onclick="filterCity('puri')">Puri</button>
+    </div>
 
 
-  <!-- Hero Section  -->
-  <section id="hero">
-    <div class="hero container">
-      <div>
-        
-        <h2> <span></span></h2>
-      
-        
-        
+
+
+
+    <div class="property-grid">
+      <div class="property-card" data-city="berhampur">
+        <img src="images/plot1.jpg" />
+        <h3>Berhampur</h3>
+        <p>1200 sq.ft Residential Plot</p>
+        <p class="price">₹ 8.5 Lakhs</p>
+        <button onclick="location.href='property-berhampur.html'">View Details</button>
+      </div>
+
+      <div class="property-card" data-city="bhubaneswar">
+        <img src="images/plot2.jpg" />
+        <h3>Bhubaneswar</h3>
+        <p>1500 sq.ft Residential Plot</p>
+        <p class="price">₹ 15 Lakhs</p>
+        <button onclick="location.href='property-bhubaneswar.html'">View Details</button>
+      </div>
+
+      <div class="property-card" data-city="puri">
+        <img src="images/plot3.jpg" />
+        <h3>Puri</h3>
+        <p>1000 sq.ft Plot</p>
+        <p class="price">₹ 10 Lakhs</p>
+        <button onclick="location.href='property-puri.html'">View Details</button>
       </div>
     </div>
-  </section>
-  <!-- End Hero Section  -->
+  </div>
+</section>
 
-
-
-
-  <!-- Service Section -->
-  <section id="services">
-    <div class="services container">
-      <div class="service-top">
-        <h1 class="section-title">We Will Help You</h1>
-        <p>Swasti Realcon is a reliable real estate company focused on helping middle-class families buy and sell residential plots safely and affordably. We offer verified properties, transparent pricing, and expert assistance to ensure a smooth and stress-free real estate experience. Our mission is to make land ownership accessible, secure, and trustworthy for everyone.</p>
-      </div>
-
-      <section id="properties">
-        <div class="properties container">
-          <h1 class="section-title">Featured <span>Plots</span></h1>
-      
-          <!-- FILTER BUTTONS -->
-          <div class="city-filters">
-            <button class="filter-btn active" onclick="filterCity('all')">All</button>
-            <button class="filter-btn" onclick="filterCity('berhampur')">Berhampur</button>
-            <button class="filter-btn" onclick="filterCity('bhubaneswar')">Bhubaneswar</button>
-            <button class="filter-btn" onclick="filterCity('puri')">Puri</button>
-            <button class="filter-btn" onclick="filterCity('balugaon')">Balugaon</button>
-          </div>
-          
-      
-          <div class="property-grid">
-      
-            <div class="property-card" data-city="berhampur">
-              <img src="images/plot1.jpg" alt="Berhampur Plot">
-              <h3>Berhampur</h3>
-              <p>1200 sq.ft Residential Plot</p>
-              <p class="price">₹ 8.5 Lakhs</p>
-              <button>View Details</button>
-            </div>
-            
-      
-            <div class="property-card" data-city="bhubaneswar">
-              <img src="images/plot2.jpg" alt="Bhubaneswar Plot">
-              <h3>Bhubaneswar</h3>
-              <p>1500 sq.ft Residential Plot</p>
-              <p class="price">₹ 15 Lakhs</p>
-              <button>View Details</button>
-            </div>
-            
-      
-            <div class="property-card" data-city="puri">
-              <img src="images/plot3.jpg" alt="Puri Plot">
-              <h3>Puri</h3>
-              <p>1000 sq.ft Plot Near Highway</p>
-              <p class="price">₹ 10 Lakhs</p>
-              <button>View Details</button>
-            </div>
-            
-      
-          </div>
-        </div>
-      </section>
-      
-
-
-
-      <!-- Management Section -->
+<!-- ================= MANAGEMENT ================= -->
 <section id="management">
   <div class="management-container">
     <h1 class="section-title">Board of Directors</h1>
 
     <div class="management-grid">
-
       <div class="management-card">
-        <img src="images/director2.jpg" alt="Director">
+        <img src="images/director2.jpg" />
         <h3>Smrutirekha Priyadarshini</h3>
         <p>Managing Director & CEO</p>
       </div>
 
       <div class="management-card">
-        <img src="images/director1.jpg" alt="Director">
+        <img src="images/director1.jpg" />
         <h3>Seshadeva Barika</h3>
         <p>Executive Director</p>
       </div>
 
       <div class="management-card">
-        <img src="images/director3.jpg" alt="Director">
+        <img src="images/director3.jpg" />
         <h3>Jane Smith</h3>
         <p>Independent Director</p>
       </div>
     </div>
   </div>
 </section>
-<!-- End Management Section -->
-<script src="./app.js"></script>
 
-<!-- Chatbot Widget -->
-<div class="chatbot-popup" id="chatbotPopup">
-  <button class="chatbot-close" onclick="closeChatbot()">×</button>
+<!-- ================= EMI CALCULATOR ================= -->
+<section id="emi">
+  <div class="container emi-container">
 
-  <div class="chatbot-content">
-    <div class="chatbot-avatar">
-      <img src="images/bot.png" alt="Chatbot">
+    <h1 class="section-title">
+      EMI <span>Calculator</span>
+    </h1>
+
+    <div class="emi-box">
+
+      <div class="emi-input">
+        <label>Property Price (₹)</label>
+        <input type="number" id="price" placeholder="Enter property price">
+      </div>
+
+      <div class="emi-input">
+        <label>Down Payment (₹)</label>
+        <input type="number" id="down" placeholder="Enter down payment">
+      </div>
+
+      <div class="emi-input">
+        <label>Interest Rate (%)</label>
+        <input type="number" id="rate" placeholder="e.g. 8.5">
+      </div>
+
+      <div class="emi-input">
+        <label>Tenure (Years)</label>
+        <input type="number" id="years" placeholder="e.g. 20">
+      </div>
+
+      <button onclick="calculateEMI()">Calculate EMI</button>
+
+      <h2 id="emi-result">Monthly EMI: ₹ 0</h2>
+
     </div>
-
-    <div class="chatbot-text">
-      <h3>👋 Hey there!</h3>
-      <p>We are here to help?</p>
-    </div>
-
-    <button class="chatbot-btn" onclick="openChat()">Start Chat</button>
   </div>
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="container testimonials-container">
+    <h1 class="section-title">Happy <span>Clients</span></h1>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>“Smooth and transparent experience.”</p>
+        <h3>Rakesh Kumar</h3>
+        <span>Berhampur</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>“Highly professional and trustworthy.”</p>
+        <h3>Sunita Dash</h3>
+        <span>Bhubaneswar</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>“Best real estate service in Odisha.”</p>
+        <h3>Amit Mishra</h3>
+        <span>Puri</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="footer">
+  <div class="footer-container">
+
+    <div class="footer-col brand">
+      <h2>SWASTI REALCON</h2>
+      <p>Trusted Real Estate Partner in Odisha.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#properties">Buy</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#management">Management</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Get in Touch</h3>
+      <p>📍 Odisha, India</p>
+      <p>📞 +91 9XXXXXXXXX</p>
+      <p>✉ info@swastirealcon.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Swasti Realcon. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ================= CHATBOT ================= -->
+<div class="chatbot-popup" id="chatbotPopup">
+  <button onclick="closeChatbot()">×</button>
+  <!-- FLOATING CHAT BUTTON -->
+<div class="floating-chat" onclick="openChat()">
+  <img src="images/whatsapp.svg" alt="Chat">
+  <span>Chat with us</span>
 </div>
 
+</div>
+
+<script src="app.js"></script>
 
 </body>
-
 </html>

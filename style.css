@@ -24,13 +24,24 @@ img {
 	width: 100%;
 	object-fit: cover;
 }
-p {
-	color: black;
-	font-size: 1.4rem;
-	margin-top: 5px;
-	line-height: 2.5rem;
-	font-weight: 300;
-	letter-spacing: 0.05rem;
+/* High visibility paragraph on video background */
+.hero-content p {
+  color: #f1f5ff;                 /* soft white with slight blue tint */
+  font-size: 1.6rem;              /* increased size */
+  line-height: 2.8rem;            /* comfortable reading */
+  font-weight: 400;               /* clearer than 300 */
+  letter-spacing: 0.06rem;
+  margin-top: 12px;
+
+  /* 🔥 visibility boost */
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
+}
+
+@media (max-width: 768px) {
+  .hero-content p {
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+  }
 }
 .section-title {
 	font-size: 4rem;
@@ -1720,6 +1731,7 @@ body {
   
 
   
+
 
 
 

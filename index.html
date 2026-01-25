@@ -179,45 +179,61 @@ to help families invest with confidence.
 
 
 <!-- ================= PROPERTIES ================= -->
-<section id="properties">
-  <div class="properties-inner">
-
-    <h1 class="section-title">
-      Featured <span>Plots</span>
-    </h1>
-
-    
-
-
-
-
-    <div class="property-grid">
-      <div class="property-card" data-city="berhampur">
-        <img src="images/plot1.jpg" />
-        <h3>Berhampur</h3>
-        <p>1200 sq.ft Residential Plot</p>
-        <p class="price">₹ 8.5 Lakhs</p>
-        <button onclick="location.href='property-berhampur.html'">View Details</button>
-      </div>
-
-      <div class="property-card" data-city="bhubaneswar">
-        <img src="images/plot2.jpg" />
-        <h3>Bhubaneswar</h3>
-        <p>1500 sq.ft Residential Plot</p>
-        <p class="price">₹ 15 Lakhs</p>
-        <button onclick="location.href='property-bhubaneswar.html'">View Details</button>
-      </div>
-
-      <div class="property-card" data-city="puri">
-        <img src="images/plot3.jpg" />
-        <h3>Puri</h3>
-        <p>1000 sq.ft Plot</p>
-        <p class="price">₹ 10 Lakhs</p>
-        <button onclick="location.href='property-puri.html'">View Details</button>
+<section id="properties-flip">
+  <h2 class="section-title">Featured Plots</h2>
+  <div class="flip-grid">
+    <!-- Property Card 1 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/plot1.jpg" alt="Plot 1">
+          <h3>City: Bhubaneswar</h3>
+        </div>
+        <div class="flip-card-back">
+          <h3>Area: 2400 sq.ft</h3>
+          <p>Price: ₹35 Lakh</p>
+          <p>Legal Title & End-to-End Support Included</p>
+          <button onclick="sendPropertyLead('Bhubaneswar','2400 sq.ft','35 Lakh')">Enquire Now</button>
+        </div>
       </div>
     </div>
+
+    <!-- Property Card 2 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/plot2.jpg" alt="Plot 2">
+          <h3>City: Puri</h3>
+        </div>
+        <div class="flip-card-back">
+          <h3>Area: 1800 sq.ft</h3>
+          <p>Price: ₹28 Lakh</p>
+          <p>Premium Plots with Legal Security</p>
+          <button onclick="sendPropertyLead('Puri','1800 sq.ft','28 Lakh')">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Property Card 3 -->
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="images/plot3.jpg" alt="Plot 3">
+          <h3>City: Balugaon</h3>
+        </div>
+        <div class="flip-card-back">
+          <h3>Area: 1800 sq.ft</h3>
+          <p>Price: ₹20 Lakh</p>
+          <p>Premium Plots with Legal Security</p>
+          <button onclick="sendPropertyLead('Balugaon','1800 sq.ft','28 Lakh')">Enquire Now</button>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
 </section>
+
 
 <!-- PROJECTS -->
 <section class="projects" id="projects">
@@ -391,6 +407,7 @@ to help families invest with confidence.
 
 </body>
 </html>
+
 
 
 

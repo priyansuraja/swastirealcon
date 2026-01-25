@@ -72,6 +72,7 @@ p {
 }
 
 /* ===================== NAVBAR ===================== */
+/* ===================== NAVBAR ===================== */
 .navbar {
     position: sticky;
     top: 0;
@@ -81,6 +82,7 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
+    transition: background 0.3s;
 }
 
 .logo {
@@ -95,14 +97,16 @@ p {
     align-items: center;
 }
 
-.nav-links a, .dropbtn {
+.nav-links a,
+.dropbtn {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
     transition: 0.3s;
 }
 
-.nav-links a:hover, .dropbtn:hover {
+.nav-links a:hover,
+.dropbtn:hover {
     color: #91ff00;
 }
 
@@ -110,6 +114,7 @@ p {
 .dropdown {
     position: relative;
 }
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -122,11 +127,13 @@ p {
     padding: 10px 0;
     border-radius: 5px;
 }
+
 .dropdown-content a {
     color: #fff;
     padding: 10px 20px;
     display: block;
 }
+
 .dropdown-content a:hover {
     background: #91ff00;
     color: #000;
@@ -139,14 +146,27 @@ p {
     gap: 5px;
     cursor: pointer;
 }
+
 .hamburger span {
     width: 25px;
     height: 3px;
     background: #fff;
     border-radius: 3px;
+    transition: all 0.3s ease;
 }
 
-/* Mobile Styles */
+/* Hamburger animation when clicked */
+.hamburger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ================= MOBILE ================= */
 @media screen and (max-width: 768px) {
     .nav-links {
         position: fixed;
@@ -160,6 +180,7 @@ p {
         justify-content: center;
         gap: 30px;
         transition: right 0.3s ease-in-out;
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -177,28 +198,21 @@ p {
         width: 100%;
         background: none;
         padding: 0;
+        gap: 15px;
     }
+
     .dropdown.active .dropdown-content {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+    }
+
+    .nav-links a,
+    .dropbtn {
+        font-size: 18px;
     }
 }
 
-/* Hamburger animation when clicked */
-.hamburger.toggle span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.hamburger.toggle span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.toggle span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-
-  
 
 
 
@@ -1543,5 +1557,6 @@ html, body {
   
 
   
+
 
 

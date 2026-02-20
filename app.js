@@ -1,4 +1,6 @@
 /* ================= NAVBAR / HAMBURGER MENU ================= */
+console.log("🔥 app.js connected successfully");
+
 
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -113,3 +115,53 @@ function calculateEMI() {
     document.getElementById("emi-result").innerText =
       "Monthly EMI: ₹ " + emi.toFixed(0);
 }
+
+let selectedProperty = {};
+
+function openPopup(city, area, price) {
+  selectedProperty = { city, area, price };
+  document.getElementById("enquiryPopup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("enquiryPopup").style.display = "none";
+}
+
+function submitLead() {
+  const name = document.getElementById("leadName").value;
+  const phone = document.getElementById("leadPhone").value;
+
+  if (!name || !phone) {
+    alert("Please enter name and phone number");
+    return;
+  }
+
+  fetch("http://localhost:5000/api/leads", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name,
+      phone,
+      city: selectedProperty.city,
+      area: selectedProperty.area,
+      price: selectedProperty.price
+    })
+  })
+  .then(() => {
+    alert("Site visit request sent!");
+    closePopup();
+  })
+  .catch(err => console.error(err));
+}
+
+
+
+
+function openPopup(city, area, price) {
+  alert("openPopup called ✔️");
+
+  selectedProperty = { city, area, price };
+  document.getElementById("enquiryPopup").style.display = "block";
+}
+
+

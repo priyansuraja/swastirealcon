@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Swasti Realcon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+    <div class="logo">SWASTI REALCON</div>
+
+    <nav class="nav-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">City ▾</button>
+        <div class="dropdown-content">
+          <a onclick="filterCity('bhubaneswar', event)">Bhubaneswar</a>
+          <a onclick="filterCity('cuttack', event)">Cuttack</a>
+          <a onclick="filterCity('puri', event)">Puri</a>
+          <a onclick="filterCity('khordha', event)">Khordha</a>
+          <a onclick="filterCity('all', event)">All</a>
+        </div>
+      </div>
+
+      <a href="#properties">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section id="hero">
+
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/realestate-bg.mp4" type="video/mp4">
+  </video>
+
+  
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <h1>Secure Your Tomorrow With Land That Grows in Value</h1>
+    <p>
+    Premium residential plots across Odisha with clear titles,
+    transparent pricing, and long-term appreciation.
+    </p>
+    
+    <a href="#properties" class="hero-btn">Explore Plots</a>
+  </div>
+
+  <!-- Smooth transition -->
+  <div class="hero-transition"></div>
+</section>
+
+<!-- ================= HELP / ABOUT ================= -->
+<section id="services">
+  <div class="services-card">
+    <h1>Your Trusted Real Estate Partner</h1>
+<p>
+We specialize in verified residential plots across Odisha, offering
+transparent pricing, legal due diligence, and personalized site visits
+to help families invest with confidence.
+</p>
+
+  </div>
+</section>
+
+<section id="about" class="about-crazy">
+  <div class="about-wrap">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-image">
+      <img src="images/about-realestate.png" alt="Swasti Realcon">
+      <div class="image-badge">
+        <h3>10+</h3>
+        <span>Years of Trust</span>
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-content">
+      <h4 class="about-tag">ABOUT SWASTI REALCON</h4>
+
+      <h1>
+        Building Trust.<br>
+        <span>Developing Tomorrow.</span>
+      </h1>
+
+      <p class="about-lead">
+        We are not just land sellers — we are planners of growth,
+        prosperity, and secure futures.
+      </p>
+
+      <p>
+        Swasti Realcon delivers carefully verified residential plots
+        across Odisha’s fastest-growing locations. Every project is
+        selected with long-term appreciation, legal clarity, and
+        lifestyle value in mind.
+      </p>
+
+      <div class="about-points">
+        <div>✔ Clear Titles & Documentation</div>
+        <div>✔ Prime & Upcoming Locations</div>
+        <div>✔ Transparent Pricing</div>
+        <div>✔ Assisted Site Visits</div>
+      </div>
+
+      <div class="about-stats">
+        <div>
+          <h2>500+</h2>
+          <span>Happy Customers</span>
+        </div>
+        <div>
+          <h2>30+</h2>
+          <span>Projects Delivered</span>
+        </div>
+        <div>
+          <h2>100%</h2>
+          <span>Verified Plots</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="why" class="why-swasti">
+  <h1 class="section-title">Why <span>Swasti Realcon</span></h1>
+  <div class="why-cards">
+    <div class="why-card">
+       <img src="images/legal-title.jpg" alt="Legal Title Icon" />
+      <h3>Clear Legal Titles</h3>
+      <p>All plots come with verified legal documents. Your investment is 100% secure.</p>
+    </div>
+    <div class="why-card">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=400&q=80" alt="Prime Locations">
+      <h3>Prime Locations</h3>
+      <p>Plots are located in high-growth areas with future appreciation potential.</p>
+    </div>
+    <div class="why-card">
+      <img src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62?auto=format&fit=crop&w=400&q=80" alt="High Appreciation">
+      <h3>High Appreciation</h3>
+      <p>Invest now and watch your property value grow over the years.</p>
+    </div>
+    <div class="why-card">
+    <img src="images/end-to-end.jpg" alt="End-to-End Support Icon" />
+      <h3>End-to-End Support</h3>
+      <p>From site visit to registration, we guide you at every step seamlessly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROPERTIES ================= -->
+ <div class="badge">Premium</div>
+<section id="properties">
+
+  <div class="properties-inner">
+
+    <h2 class="section-title">Featured Plots</h2>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-buttons">
+
+      <button class="filter-btn active" onclick="filterCity('all', event)">
+        All
+      </button>
+
+      <button class="filter-btn" onclick="filterCity('bhubaneswar', event)">
+        Bhubaneswar
+      </button>
+
+      <button class="filter-btn" onclick="filterCity('cuttack', event)">
+        Cuttack
+      </button>
+
+      <button class="filter-btn" onclick="filterCity('puri', event)">
+        Puri
+      </button>
+
+      <button class="filter-btn" onclick="filterCity('khordha', event)">
+        Khordha
+      </button>
+
+    </div>
+
+
+    <!-- PROPERTY GRID -->
+    <div class="property-grid">
+
+      <div class="property-card" data-city="bhubaneswar">
+        <img src="images/plot1.jpg">
+        <h3>Patia</h3>
+        <p>1200 sq.ft</p>
+        <span>₹10 Lakh</span>
+        <button onclick="openPopup('Bhubaneswar','Patia','10 Lakh')">
+          Enquire Now
+        </button>
+      </div>
+
+      <div class="property-card" data-city="bhubaneswar">
+        <img src="images/plot2.jpg">
+        <h3>Khandagiri</h3>
+        <p>1500 sq.ft</p>
+        <span>₹14 Lakh</span>
+        <button onclick="openPopup('Bhubaneswar','Khandagiri','14 Lakh')">
+          Enquire Now
+        </button>
+      </div>
+
+      <div class="property-card" data-city="cuttack">
+        <img src="images/plot3.jpg">
+        <h3>Nakhara</h3>
+        <p>1000 sq.ft</p>
+        <span>₹8 Lakh</span>
+        <button onclick="openPopup('Cuttack','Nakhara','8 Lakh')">
+          Enquire Now
+        </button>
+      </div>
+
+      <div class="property-card" data-city="puri">
+        <img src="images/plot2.jpg">
+        <h3>Sea View</h3>
+        <p>1500 sq.ft</p>
+        <span>₹15 Lakh</span>
+        <button onclick="openPopup('Puri','Sea View','15 Lakh')">
+          Enquire Now
+        </button>
+      </div>
+
+      <div class="property-card" data-city="khordha">
+        <img src="images/plot1.jpg">
+        <h3>Barunei</h3>
+        <p>1200 sq.ft</p>
+        <span>₹7 Lakh</span>
+        <button onclick="openPopup('Khordha','Barunei','7 Lakh')">
+          Enquire Now
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= POPUP JS ================= -->
+<script>
+
+function filterCity(city, event){
+
+  const cards = document.querySelectorAll('.property-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  buttons.forEach(btn => btn.classList.remove('active'));
+
+  if(event){
+    event.target.classList.add('active');
+  }
+
+  cards.forEach(card => {
+
+    if(city === "all" || card.dataset.city === city){
+      card.style.display = "block";
+    }
+    else{
+      card.style.display = "none";
+    }
+
+  });
+
+}
+
+</script>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<!-- ================= MANAGEMENT ================= -->
+<section id="management">
+  <div class="management-container">
+    <h1 class="section-title">Board of Directors</h1>
+
+    <div class="management-grid">
+      <div class="management-card">
+        <img src="images/director2.jpg" />
+        <h3>Smrutirekha Priyadarshini</h3>
+        <p>Managing Director & CEO</p>
+      </div>
+
+      <div class="management-card">
+        <img src="images/director1.jpg" />
+        <h3>Seshadeva Barika</h3>
+        <p>Executive Director</p>
+      </div>
+
+      <div class="management-card">
+        <img src="images/director3.jpg" />
+        <h3>Jane Smith</h3>
+        <p>Independent Director</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EMI CALCULATOR ================= -->
+<section id="emi">
+  <div class="container emi-container">
+
+    <h1 class="section-title">
+      EMI <span>Calculator</span>
+    </h1>
+
+    <div class="emi-box">
+
+      <div class="emi-input">
+        <label>Property Price (₹)</label>
+        <input type="number" id="price" placeholder="Enter property price">
+      </div>
+
+      <div class="emi-input">
+        <label>Down Payment (₹)</label>
+        <input type="number" id="down" placeholder="Enter down payment">
+      </div>
+
+      <div class="emi-input">
+        <label>Interest Rate (%)</label>
+        <input type="number" id="rate" placeholder="e.g. 8.5">
+      </div>
+
+      <div class="emi-input">
+        <label>Tenure (Years)</label>
+        <input type="number" id="years" placeholder="e.g. 20">
+      </div>
+
+      <button onclick="calculateEMI()">Calculate EMI</button>
+
+      <h2 id="emi-result">Monthly EMI: ₹ 0</h2>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ================= TESTIMONIALS ================= -->
+<section id="testimonials">
+  <div class="container testimonials-container">
+    <h1 class="section-title">Happy <span>Clients</span></h1>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>“Smooth and transparent experience.”</p>
+        <h3>Rakesh Kumar</h3>
+        <span>Berhampur</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>“Highly professional and trustworthy.”</p>
+        <h3>Sunita Dash</h3>
+        <span>Bhubaneswar</span>
+      </div>
+
+      <div class="testimonial-card">
+        <p>“Best real estate service in Odisha.”</p>
+        <h3>Amit Mishra</h3>
+        <span>Puri</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="footer">
+  <div class="footer-container">
+
+    <div class="footer-col brand">
+      <h2>SWASTI REALCON</h2>
+      <p>Trusted Real Estate Partner in Odisha.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#properties">Buy</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#management">Management</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Get in Touch</h3>
+      <p>📍 Odisha, India</p>
+      <p>📞 +91 9XXXXXXXXX</p>
+      <p>✉ info@swastirealcon.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Swasti Realcon. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ================= CHATBOT ================= -->
+<div class="chatbot-popup" id="chatbotPopup">
+  <button onclick="closeChatbot()">×</button>
+  <!-- FLOATING CHAT BUTTON -->
+<div class="floating-chat" onclick="openChat()">
+  <img src="images/whatsapp.svg" alt="Chat">
+  <span>Chat with us</span>
+</div>
+
+</div>
+
+
+<!-- ================= ENQUIRY POPUP ================= -->
+<div id="enquiryPopup" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+">
+  <div style="
+    background:#fff;
+    width:360px;
+    padding:25px;
+    margin:120px auto;
+    border-radius:12px;
+    text-align:center;
+  ">
+    <h3>Enquire Now</h3>
+
+    <p id="popupProperty" style="margin:10px 0; color:#555;"></p>
+
+    <input id="leadName" type="text" placeholder="Your Name"
+      style="width:100%; padding:10px; margin:8px 0;" />
+
+    <input id="leadPhone" type="text" placeholder="Phone Number"
+      style="width:100%; padding:10px; margin:8px 0;" />
+
+    <button onclick="submitLead()"
+      style="width:100%; padding:10px; background:crimson; color:#fff; border:none;">
+      Submit
+    </button>
+
+    <button onclick="closePopup()"
+      style="width:100%; padding:10px; margin-top:8px;">
+      Cancel
+    </button>
+  </div>
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+let selectedProperty = {};
+
+// OPEN POPUP
+function openPopup(city, area, price) {
+  selectedProperty = { city, area, price };
+
+  document.getElementById("popupProperty").innerText =
+    city + " | " + area + " | ₹" + price;
+
+  document.getElementById("enquiryPopup").style.display = "block";
+}
+
+// CLOSE POPUP
+function closePopup() {
+  document.getElementById("enquiryPopup").style.display = "none";
+}
+
+// SUBMIT LEAD
+function submitLead() {
+  const name = document.getElementById("leadName").value;
+  const phone = document.getElementById("leadPhone").value;
+
+  if (!name || !phone) {
+    alert("Please fill all details");
+    return;
+  }
+
+  fetch("http://localhost:5000/api/leads", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name: name,
+      phone: phone,
+      city: selectedProperty.city,
+      area: selectedProperty.area,
+      price: selectedProperty.price
+    })
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("Enquiry submitted successfully ✅");
+    closePopup();
+    document.getElementById("leadName").value = "";
+    document.getElementById("leadPhone").value = "";
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error submitting enquiry ❌");
+  });
+}
+</script>
+
+</body>
+</html>

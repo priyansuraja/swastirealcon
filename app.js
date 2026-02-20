@@ -166,4 +166,4 @@ function openPopup(city, area, price) {
 }
 
 
->>>>>>> 702010282c2de80c36552990b429b959b698a0ac
+

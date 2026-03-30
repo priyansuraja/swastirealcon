@@ -332,14 +332,24 @@ to help families invest with confidence.
         </button>
       </div>
 
-        <div class="property-card" data-city="Banpur">
-        <img src="images/plot7.jpg">
-        <h3>Gambarimunda near govt hospital </h3>
-        <p>1200 sq.ft</p>
-        <button onclick="openPopup('Banpur','Gambarimunda near govt hospital','7 Lakh')">
-          Enquire Now
-        </button>
-      </div>
+       <div class="property-card" data-city="Banpur">
+
+    <div class="slider">
+    <img src="images/plot7.jpg" class="slide active">
+    <img src="images/plot8.jpg" class="slide">
+    <img src="images/plot9.jpg" class="slide">
+
+    <button class="prev" onclick="changeSlide(this, -1)">❮</button>
+    <button class="next" onclick="changeSlide(this, 1)">❯</button>
+  </div>
+
+  <h3>Gambarimunda near govt hospital</h3>
+  <p>1200 sq.ft</p>
+
+   <button onclick="openPopup('Banpur','Gambarimunda near govt hospital','7 Lakh')">
+    Enquire Now
+  </button>
+</div>
 
       
 
@@ -651,6 +661,31 @@ function submitLead() {
     console.error(err);
     alert("Error submitting enquiry ❌");
   });
+}
+</script>
+
+
+  <script src="app.js"></script>
+<script>
+function changeSlide(button, direction) {
+  const slider = button.parentElement; // current slider
+  const slides = slider.querySelectorAll(".slide");
+
+  let currentIndex = 0;
+
+  slides.forEach((slide, index) => {
+    if (slide.classList.contains("active")) {
+      currentIndex = index;
+    }
+    slide.classList.remove("active");
+  });
+
+  let newIndex = currentIndex + direction;
+
+  if (newIndex >= slides.length) newIndex = 0;
+  if (newIndex < 0) newIndex = slides.length - 1;
+
+  slides[newIndex].classList.add("active");
 }
 </script>
 

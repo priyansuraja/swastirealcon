@@ -52,7 +52,7 @@ function openChat() {
     );
 
     window.location.href =
-      "https://wa.me/919040682791?text=" + message;
+      "https://wa.me/916281636780?text=" + message;
 }
 
 /* ================= PROPERTY FILTER ================= */
@@ -84,7 +84,7 @@ function sendPropertyLead(city, area, price) {
     );
 
     window.location.href =
-      "https://wa.me/919040682791?text=" + message;
+      "https://wa.me/916281636780?text=" + message;
 }
 
 /* ================= EMI ================= */

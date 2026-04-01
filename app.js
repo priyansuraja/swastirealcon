@@ -1,7 +1,6 @@
+document.addEventListener("DOMContentLoaded", function () {
 
-/* ================= NAVBAR / HAMBURGER MENU ================= */
 console.log("🔥 app.js connected successfully");
-
 
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -9,63 +8,60 @@ const dropdown = document.querySelector('.dropdown');
 const dropbtn = document.querySelector('.dropbtn');
 const header = document.querySelector('.navbar');
 
-// Hamburger click - slide mobile menu
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active'); // mobile menu slide
-    hamburger.classList.toggle('toggle'); // animate hamburger
-});
+// ✅ SAFE EVENT BINDING
+if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('toggle');
+    });
+}
 
-// Dropdown toggle for mobile
-dropbtn.addEventListener('click', (e) => {
-    e.preventDefault(); // prevent page jump
-    dropdown.classList.toggle('active');
-});
+if (dropbtn && dropdown) {
+    dropbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        dropdown.classList.toggle('active');
+    });
+}
 
-// Close mobile menu when any link clicked
 document.querySelectorAll('.nav-links a').forEach(item => {
     item.addEventListener('click', () => {
-        if(navLinks.classList.contains('active')){
+        if(navLinks && navLinks.classList.contains('active')){
             navLinks.classList.remove('active');
             hamburger.classList.remove('toggle');
-            dropdown.classList.remove('active'); // close dropdown too
+            dropdown.classList.remove('active');
         }
     });
 });
 
-// Header scroll effect
-document.addEventListener('scroll', () => {
-    if(window.scrollY > 250){
-        header.style.backgroundColor = '#29323c';
-    } else {
-        header.style.backgroundColor = 'rgba(0,0,0,0.8)';
-    }
-});
-
-/* ================= CHATBOT ================= */
-function closeChatbot() {
-    document.getElementById("chatbotPopup").style.display = "none";
+if (header) {
+    document.addEventListener('scroll', () => {
+        if(window.scrollY > 250){
+            header.style.backgroundColor = '#29323c';
+        } else {
+            header.style.backgroundColor = 'rgba(0,0,0,0.8)';
+        }
+    });
 }
 
+}); // ✅ END
+
+/* ================= CHATBOT ================= */
 function openChat() {
     const message = encodeURIComponent(
-      "Hello Swasti Realcon 👋\n" +
-      "I am interested in your residential plots.\n" +
-      "Please share more details."
+      "Hello Swasti Realcon 👋 I am interested in your plots."
     );
 
-    window.open(
-      "https://wa.me/919040682791?text=" + message,
-      "_blank"
-    );
+    window.location.href =
+      "https://wa.me/919040682791?text=" + message;
 }
 
 /* ================= PROPERTY FILTER ================= */
-function filterCity(city) {
+function filterCity(city, event) {
     const cards = document.querySelectorAll('.property-card');
     const buttons = document.querySelectorAll('.filter-btn');
 
     buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    if(event) event.target.classList.add('active');
 
     cards.forEach(card => {
         if (city === 'all' || card.dataset.city === city) {
@@ -76,7 +72,7 @@ function filterCity(city) {
     });
 }
 
-/* ================= PROPERTY LEAD ================= */
+/* ================= WHATSAPP PROPERTY LEAD ================= */
 function sendPropertyLead(city, area, price) {
     const message = encodeURIComponent(
       "Hello Swasti Realcon 👋\n\n" +
@@ -87,13 +83,11 @@ function sendPropertyLead(city, area, price) {
       "Please arrange a site visit."
     );
 
-    window.open(
-      "https://wa.me/919040682791?text=" + message,
-      "_blank"
-    );
+    window.location.href =
+      "https://wa.me/919040682791?text=" + message;
 }
 
-/* ================= EMI CALCULATOR ================= */
+/* ================= EMI ================= */
 function calculateEMI() {
     const price = document.getElementById("price").value;
     const down = document.getElementById("down").value;
@@ -117,53 +111,6 @@ function calculateEMI() {
       "Monthly EMI: ₹ " + emi.toFixed(0);
 }
 
-let selectedProperty = {};
-
-function openPopup(city, area, price) {
-  selectedProperty = { city, area, price };
-  document.getElementById("enquiryPopup").style.display = "block";
-}
-
-function closePopup() {
-  document.getElementById("enquiryPopup").style.display = "none";
-}
-
-function submitLead() {
-  const name = document.getElementById("leadName").value;
-  const phone = document.getElementById("leadPhone").value;
-
-  if (!name || !phone) {
-    alert("Please enter name and phone number");
-    return;
-  }
-
-  fetch("http://localhost:5000/api/leads", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name,
-      phone,
-      city: selectedProperty.city,
-      area: selectedProperty.area,
-      price: selectedProperty.price
-    })
-  })
-  .then(() => {
-    alert("Site visit request sent!");
-    closePopup();
-  })
-  .catch(err => console.error(err));
-}
-
-
-
-
-function openPopup(city, area, price) {
-  alert("openPopup called ✔️");
-
-  selectedProperty = { city, area, price };
-  document.getElementById("enquiryPopup").style.display = "block";
-}
 
 
 
